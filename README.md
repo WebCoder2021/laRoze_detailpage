@@ -1,0 +1,1 @@
+# laRoze_detailpage

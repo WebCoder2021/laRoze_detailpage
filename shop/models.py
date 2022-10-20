@@ -19,6 +19,7 @@ class ProductState(models.Model):
         verbose_name_plural = "Mahsulot ishlab chiqarilgan davlatlar"
 class ProductColor(models.Model):
     name = models.CharField(max_length=250,verbose_name="Rang nomi")
+    color = models.CharField(max_length=100,null=True)
     def __str__(self):
         return  self.name
     class Meta():
@@ -27,11 +28,10 @@ class ProductColor(models.Model):
 
 
 class Product(models.Model):
-    image1 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 1")
-    image2 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 2")
-    image3 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 3")
-    video = models.FileField(upload_to="products/video/%Y/%m/%d",blank=True,null=True,verbose_name="Video fayl")
-    iframe = models.TextField(null=True,blank=True,verbose_name="YouTube video manzil")
+    image1 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 1",editable=True)
+    image2 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 2",editable=True)
+    image3 = models.ImageField(upload_to="products/images/%Y/%m/%d",blank=True,null=True,verbose_name="Rasm 3",editable=True)
+    video = models.FileField(upload_to="products/video/%Y/%m/%d",blank=True,null=True,verbose_name="Video fayl",editable=True)
     name = models.CharField(max_length=250,verbose_name="Nomi")
     price = models.IntegerField(verbose_name="Narxi")
     discount = models.PositiveSmallIntegerField(blank=True, null=True,verbose_name="Chegirma")
@@ -45,7 +45,9 @@ class Product(models.Model):
     class Meta():
         verbose_name = "Mahsulot"
         verbose_name_plural = "Mahsulotlar"
-
+    def new_price(self):
+        if self.discount:
+            return self.price*(100-self.discount)/100
     def __str__(self):
         return  self.name
 

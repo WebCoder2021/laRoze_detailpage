@@ -273,7 +273,7 @@ img {
 @media screen and (min-width: 992px) {
   .card {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 1.5rem;
   }
   .card-wrapper {

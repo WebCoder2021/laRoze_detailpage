@@ -10,6 +10,7 @@ def index(request):
     context['product']=product
     context['payment_type']=PaymentType.objects.all()
     if request.method=='POST':
+        print('POST')
         fio = request.POST.get('fio',False)
         phone_number = request.POST.get('phone_number',False)
         address = request.POST.get('address',False)
@@ -21,6 +22,10 @@ def index(request):
             order.save()
             context['yes'] = True
             return render(request, 'index.html',context)
+        else:
+            context['err'] = "Iltimos ma'lumotlarni to'liq kiritng"
+            return render(request, 'index.html',context)
+
 
 
 

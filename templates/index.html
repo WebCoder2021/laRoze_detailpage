@@ -85,7 +85,7 @@
         <!-- card right -->
         <div class="product-content">
           <h2 class="product-title">{{product.name}}</h2>
-          <a href="#" class="product-link">Интернет магазин LaRoze</a>
+          <a href="#" class="product-link">Internet magazin LaRoze</a>
           <!-- <div class = "product-rating">
               <i class = "fas fa-star"></i>
               <i class = "fas fa-star"></i>
@@ -116,6 +116,7 @@
             </div>
             <div class="placing-order">
               <h1>Buyurtm berish</h1>
+              {% if err %} <p style="color: red;" >{{err}}</p> {% endif %}
               <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-itm">
@@ -167,7 +168,7 @@
                   </div>
                 </div>
                 <div class="btn-div">
-                  <button id="modal_trigger" type="submit" class="btn">Chegirma narxda buyurtma berish</button>
+                  <button type="submit" class="btn">Chegirma narxda buyurtma berish</button>
                 </div>
               </form>
             </div>

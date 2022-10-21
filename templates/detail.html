@@ -205,6 +205,20 @@
         </section>
     </div>
     </div>
+    {% if yes %}
+    <script>
+
+      const myTimeout = setTimeout(myGreeting, 5000);
+      
+      function myGreeting() {
+        window.location.href = "https://t.me/webcoder_bukhara"
+      }
+      
+      function myStopFunction() {
+        clearTimeout(myTimeout);
+      }
+          </script>
+    {% endif %}
     <script>
       const imgs = document.querySelectorAll(".img-select a");
       const imgBtns = [...imgs];

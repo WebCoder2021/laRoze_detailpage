@@ -34,8 +34,8 @@ class Product(models.Model):
     video = models.FileField(upload_to="products/video/%Y/%m/%d",blank=True,null=True,verbose_name="Video fayl",editable=True)
     name = models.CharField(max_length=250,verbose_name="Nomi")
     price = models.IntegerField(verbose_name="Narxi")
-    discount = models.PositiveSmallIntegerField(blank=True, null=True,verbose_name="Chegirma")
-    content = models.TextField(null=True,blank=True,verbose_name="Qisqacha tovar haqida")
+    discount = models.PositiveSmallIntegerField(null=True,verbose_name="Chegirma")
+    content = models.TextField(null=True,verbose_name="Qisqacha tovar haqida")
     state = models.ForeignKey(ProductState,on_delete=models.CASCADE,verbose_name="Davlat")
     sizes = models.ManyToManyField(ProductSize,verbose_name="O'lchamlar")
     colors = models.ManyToManyField(ProductColor,verbose_name="Ranglar")
@@ -47,7 +47,7 @@ class Product(models.Model):
         verbose_name_plural = "Mahsulotlar"
     def new_price(self):
         if self.discount:
-            return self.price*(100-self.discount)/100
+            return int(self.price*(100-self.discount)/100)
     def __str__(self):
         return  self.name
 

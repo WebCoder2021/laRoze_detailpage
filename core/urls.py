@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from shop.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('<slug>', detail, name='detail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

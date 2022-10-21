@@ -21,16 +21,56 @@ img {
   display: block;
 }
 
+.product_sale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 3px 3px #aaa;
+  margin: 0 0 5px 0;
+}
+.product_sale .pr_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.product_sale .pr_price p:nth-child(1) {
+  font-size: 15px;
+  color: #888;
+}
+.product_sale .pr_price p:nth-child(2) {
+  font-size: 20px;
+  font-weight: 700;
+}
+.product_sale .p_price p:nth-child(2) {
+  text-decoration: line-through;
+}
+.product_sale .p_discount {
+  background-color: #AF1F3A;
+}
+.product_sale .p_discount p:nth-child(1) {
+  color: #ccc;
+}
+.product_sale .p_discount p:nth-child(2) {
+  color: #fff;
+}
+
 .img-display {
   overflow: hidden;
   position: relative;
 }
 .img-display .discount {
   position: absolute;
-  bottom: 5%;
-  right: 5%;
+  top: 20%;
+  left: 80%;
+  background-color: #AF1F3A;
+  transform: translate(-50%, -50%);
   border: 2px solid #fff;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 7px;
   color: #fff;
   font-weight: 900;
@@ -39,7 +79,7 @@ img {
   z-index: 111111111111111;
 }
 .img-display .discount p {
-  color: #ccc;
+  color: #ddd;
 }
 .img-display .discount span {
   font-size: 25px;
@@ -398,6 +438,14 @@ form label span:before {
   align-items: center;
   flex-direction: column;
   margin: 20px 0;
+  border: 1px solid #f64749;
+  border-radius: 7px;
+  background-color: #f64749;
+  padding-top: 10px;
+}
+.timer h2 {
+  text-align: center;
+  color: #fff;
 }
 
 .backModal {
@@ -464,4 +512,12 @@ form label span:before {
   font-size: 16px;
   font-weight: 900;
   color: #0342be;
+}
+
+body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.kun,
+body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > ul:nth-child(2),
+body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > ul:nth-child(3),
+body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.soat > span.flip-clock-dot.top,
+body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.soat > span.flip-clock-dot.bottom {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

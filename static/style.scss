@@ -12,10 +12,16 @@ $text-color: mix(#000, $primary-color, 64%);
 }
 body{
     line-height: 1.5;
+    background-image: linear-gradient(to top left, rgb(255, 197, 197), #fcb8b9);
     // background-image: url(../static/fon.jpg);
     // background-repeat: no-repeat;
     // background-position: center;
     // background-size: cover;
+}
+.div{
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius: 7px;
 }
 .card-wrapper{
     margin: 3vw;
@@ -25,7 +31,8 @@ img{
     width: 100%;
     display: block;
 }
-.product_sale{
+.product_sale{ border-radius: 7px;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +61,7 @@ img{
         text-decoration:line-through;
     }
     .p_discount{
-        background-color: #AF1F3A;
+        background-color: #f64749;
         p:nth-child(1){
             color: #ccc;
         }p:nth-child(2){
@@ -69,7 +76,7 @@ img{
         position: absolute;
         top: 20%;
         left: 80%;
-        background-color: #AF1F3A;
+        background-color: #f64749;
         transform: translate(-50%, -50%);
         border: 2px solid #fff;
         padding: 5px 10px;
@@ -268,6 +275,7 @@ img{
     color: #fff;
 }
 .placing-order{
+    background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px 20px 40px 20px;
     border-radius: 7px;
@@ -297,6 +305,7 @@ img{
     }
     .product-content{
         padding-top: 0;
+        background-color: #fff;
     }
 }
 

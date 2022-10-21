@@ -19,7 +19,7 @@
         <div class="product-imgs">
           <div class="img-display">
             <div class="discount">
-              <p>Chegirma</p>
+              <p>Скидка</p>
               <span>-{{product.discount}}%</span>
               
             </div>
@@ -42,12 +42,12 @@
             </div>
             <div class="product_sale">
               <div class="pr_price p_price">
-                <p>Eski narx</p>
-                <p>{{product.price|number_group:'3'}} so'm</p>
+                <p>Старая цена:</p>
+                <p>{{product.price|number_group:'3'}} сум</p>
               </div>
               <div class="pr_price p_discount">
-                <p>Yangi narx</p>
-                <p>{{product.new_price|number_group:'3'}} so'm</p>
+                <p>Новая цена:</p>
+                <p>{{product.new_price|number_group:'3'}} сум</p>
               </div>
             </div>
           </div>
@@ -94,8 +94,9 @@
         </div>
         <!-- card right -->
         <div class="product-content">
-          <h2 class="product-title">{{product.name}}</h2>
-          <a href="#" class="product-link">Internet magazin LaRoze</a>
+          <div class="div">
+            <h2 class="product-title">{{product.name}}</h2>
+          <a href="#" class="product-link">Доверие важнее прибыли</a>
           <!-- <div class = "product-rating">
               <i class = "fas fa-star"></i>
               <i class = "fas fa-star"></i>
@@ -107,30 +108,31 @@
 
           <div class="product-price">
             <p class="last-price">
-              Eski narx: <span>{{product.price}} so'm</span>
+              Старая цена: <span>{{product.price|number_group:'3'}} сум</span>
             </p>
             <p class="new-price">
-              Yangi narx:
-              <span>{{product.new_price}} so'm (-{{product.discount}}%)</span>
+              Новая цена:
+              <span>{{product.new_price|number_group:'3'}} сум (-{{product.discount}}%)</span>
             </p>
           </div>
 
           <div class="product-detail">
-            <h2>Ushbu mahsulot haqida:</h2>
+            <h2>Об этом продукте:</h2>
             <p>{{product.content}}</p>
+          </div>
           </div>
           <div class="container">
             <div class="timer">
-              <h2>Chegirma tugashiga qolgan vaqt</h2>
+              <h2>Время до окончания скидки</h2>
               <div class="clock" style="margin:4em 0 0;"></div>
             </div>
             <div class="placing-order">
-              <h1>Buyurtm berish</h1>
+              <h1>Сделать заказ</h1>
               {% if err %} <p style="color: red;" >{{err}}</p> {% endif %}
               <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-itm">
-                  <p for="">Rangi</p>
+                  <p for="">Цвет</p>
                   <div class="colors">
                     {% for pr in product.colors.all %}
                     <label>
@@ -143,7 +145,7 @@
                   </div>
                 </div>
                 <div class="form-itm">
-                  <p for="">O'lchami</p>
+                  <p for="">Размер</p>
                   <div class="colors">
                   {% for size in product.sizes.all %}
                     <label>
@@ -154,19 +156,19 @@
                   </div>
                 </div>
                 <div class="form-itm">
-                  <p for="">FIO</p>
-                  <input type="text" name="fio" placeholder="Familiya ism sha'rif" />
+                  <p for="">ФИО</p>
+                  <input type="text" name="fio" placeholder="ФИО" />
                 </div>
                 <div class="form-itm">
-                  <p for="">Telefon raqam</p>
-                  <input type="text" name="phone_number" placeholder="Telefon raqam" />
+                  <p for="">Номер телефона</p>
+                  <input type="text" name="phone_number" placeholder="Номер телефона" />
                 </div>
                 <div class="form-itm">
-                  <p for="">Manzil</p>
-                  <input type="text" name="address" placeholder="Manzil" />
+                  <p for="">Адрес</p>
+                  <input type="text" name="address" placeholder="Адрес" />
                 </div>
                 <div class="form-itm">
-                  <p for="">To'lov shakli</p>
+                  <p for="">Форма оплаты</p>
                   <div class="colors">
                     {% for ty in payment_type %}
                     <label>
@@ -178,7 +180,7 @@
                   </div>
                 </div>
                 <div class="btn-div">
-                  <button type="submit" class="btn">Chegirma narxda buyurtma berish</button>
+                  <button type="submit" class="btn">ЗАКАЗ СО СКИДКОЙ</button>
                 </div>
               </form>
             </div>
@@ -197,10 +199,10 @@
         <section class="popupBody">
             <!-- Social Login -->
             <div>
-                <h1>🎉Tabriklaymiz!🎊</h1>
-                                <h2>Sizning 🎁 buyurtmangiz qabul qilindi</h2>
-                                <p>Tez orada bizning operator buyurtmangiz bo'yicha yetkazib berish uchun siz bilan bog'lanishadi</p>
-                                <h3>Iltimos, telefon raqamingiz aloqada bo'lib tursin</h3>
+                <h1>🎉Поздравляем!🎊</h1>
+                                <h2>🎁 Ваш заказ принят!</h2>
+                                <p>В скором времени наш оператор с вами свяжется по доставки товара</p>
+                                <h3>Просьба оставайтесь на связи</h3>
             </div>
         </section>
     </div>

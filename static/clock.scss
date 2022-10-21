@@ -428,3 +428,9 @@
 
   100% {
     opacity: 0; } }
+
+
+    body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.день,body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.час > span.flip-clock-dot.bottom,
+    body > div.card-wrapper > div > div.product-content > div.container > div.timer > div > span.flip-clock-divider.час > span.flip-clock-dot.top{
+      display: none;
+    }

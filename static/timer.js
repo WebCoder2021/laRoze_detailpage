@@ -2105,16 +2105,16 @@ var FlipClock;
 			}
 
 			if(this.showSeconds) {
-				$(this.createDivider('Soniya')).insertBefore(this.lists[this.lists.length - 2].$el);
+				$(this.createDivider('Секунд')).insertBefore(this.lists[this.lists.length - 2].$el);
 			}
 			else
 			{
 				offset = 2;
 			}
 
-			$(this.createDivider('Daqiqa')).insertBefore(this.lists[this.lists.length - 4 + offset].$el);
-			$(this.createDivider('Soat')).insertBefore(this.lists[this.lists.length - 6 + offset].$el);
-			$(this.createDivider('Kun', true)).insertBefore(this.lists[0].$el);
+			$(this.createDivider('Минута')).insertBefore(this.lists[this.lists.length - 4 + offset].$el);
+			$(this.createDivider('Час')).insertBefore(this.lists[this.lists.length - 6 + offset].$el);
+			$(this.createDivider('День', true)).insertBefore(this.lists[0].$el);
 
 			this.base();
 		},

@@ -9,6 +9,13 @@
 
 body {
   line-height: 1.5;
+  background-image: linear-gradient(to top left, rgb(255, 197, 197), #fcb8b9);
+}
+
+.div {
+  padding: 0 10px;
+  background-color: #fff;
+  border-radius: 7px;
 }
 
 .card-wrapper {
@@ -22,6 +29,8 @@ img {
 }
 
 .product_sale {
+  border-radius: 7px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +59,7 @@ img {
   text-decoration: line-through;
 }
 .product_sale .p_discount {
-  background-color: #AF1F3A;
+  background-color: #f64749;
 }
 .product_sale .p_discount p:nth-child(1) {
   color: #ccc;
@@ -67,7 +76,7 @@ img {
   position: absolute;
   top: 20%;
   left: 80%;
-  background-color: #AF1F3A;
+  background-color: #f64749;
   transform: translate(-50%, -50%);
   border: 2px solid #fff;
   padding: 5px 10px;
@@ -299,6 +308,7 @@ img {
 }
 
 .placing-order {
+  background-color: #fff;
   border: 1px solid #ddd;
   padding: 20px 20px 40px 20px;
   border-radius: 7px;
@@ -329,6 +339,7 @@ img {
   }
   .product-content {
     padding-top: 0;
+    background-color: #fff;
   }
 }
 form .form-itm {

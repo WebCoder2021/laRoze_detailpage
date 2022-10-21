@@ -31,14 +31,13 @@ def detail(request,slug):
             order = Orders.objects.create(product=product,color_id=color,size_id=size,payment_type_id=payment,full_name=fio,phone_number=phone_number,address=address)
             order.save()
             text = set_info(order.id)
-            context['text'] = text
             print(text)
             send_order(text)
             context['yes'] = True
-            return render(request, 'index.html',context)
+            return render(request, 'detail.html',context)
         else:
-            context['err'] = "Iltimos ma'lumotlarni to'liq kiritng"
-            return render(request, 'index.html',context)
+            context['err'] = "Iltimos ma'lumotlarni to'liq kiriting"
+            return render(request, 'detail.html',context)
 
 
 

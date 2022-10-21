@@ -19,7 +19,7 @@ class ProductState(models.Model):
         verbose_name_plural = "Mahsulot ishlab chiqarilgan davlatlar"
 class ProductColor(models.Model):
     name = models.CharField(max_length=250,verbose_name="Rang nomi")
-    color = models.CharField(max_length=100,null=True)
+    color = models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return  self.name
     class Meta():

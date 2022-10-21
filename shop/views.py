@@ -36,7 +36,7 @@ def detail(request,slug):
             context['yes'] = True
             return render(request, 'detail.html',context)
         else:
-            context['err'] = "Iltimos ma'lumotlarni to'liq kiriting"
+            context['err'] = "Пожалуйста, введите данные полностью"
             return render(request, 'detail.html',context)
 
 

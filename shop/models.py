@@ -1,3 +1,4 @@
+from tokenize import blank_re
 from django.db import models
 
 # Create your models here.
@@ -34,8 +35,8 @@ class Product(models.Model):
     video = models.FileField(upload_to="products/video/%Y/%m/%d",blank=True,null=True,verbose_name="Video fayl",editable=True)
     name = models.CharField(max_length=250,verbose_name="Nomi")
     price = models.IntegerField(verbose_name="Narxi")
-    discount = models.PositiveSmallIntegerField(null=True,verbose_name="Chegirma")
-    content = models.TextField(null=True,verbose_name="Qisqacha tovar haqida")
+    discount = models.PositiveSmallIntegerField(verbose_name="Chegirma",null=True,blank=True)
+    content = models.TextField(blank=True,null=True,verbose_name="Qisqacha tovar haqida")
     state = models.ForeignKey(ProductState,on_delete=models.CASCADE,verbose_name="Davlat")
     sizes = models.ManyToManyField(ProductSize,verbose_name="O'lchamlar")
     colors = models.ManyToManyField(ProductColor,verbose_name="Ranglar")

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fzg!yyqc_ea=&)0=)3zs+rg^sch23q((f8ok#+*p$ck3e9lhy0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['http://laroze.uz','https://laroze.uz',' http://laroze.uz/',' https://laroze.uz/']
